@@ -1,18 +1,15 @@
 export const countries = [
   {
-    name: "China",
-    coordinates: [105.3188, 34.3416],
-    values: ["Filial Piety", "Respect for Elders", "Academic Excellence"],
-    description:
-      "In Chinese parenting, respect for elders and academic success are often seen as core family values.",
-    activity: "Create a family tree together and talk about grandparents’ life stories.",
+    name: 'China',
+    short: 'Rooted in Confucian values and filial piety',
+    description: 'Chinese parenting emphasizes respect for elders, academic excellence, and strong discipline...',
+    values: ['Filial Piety', 'Hard Work', 'Discipline'],
   },
   {
-    name: "India",
-    coordinates: [78.9629, 20.5937],
-    values: ["Family Unity", "Obedience", "Hard Work"],
-    description:
-      "Indian parenting often emphasizes strong family bonds, obedience, and working hard for success.",
-    activity: "Do a chore together and talk about teamwork and pride in responsibility.",
+    name: 'India',
+    short: 'Blending tradition, spirituality, and modern ambition',
+    description: 'Indian parenting combines deep respect for family and spiritual values with a strong drive for educational achievement...',
+    values: ['Respect for Elders', 'Education', 'Community Harmony'],
   },
+  // Add others similarly
 ];

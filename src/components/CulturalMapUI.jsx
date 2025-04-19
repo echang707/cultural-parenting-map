@@ -39,9 +39,9 @@ const CulturalMapUI = () => {
 
   return (
     <main className="flex flex-col items-center px-4 pt-8 sm:pt-10 pb-12">
-      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-4 leading-snug">
+      <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-center leading-snug mb-4">
         🌍 Cultural Parenting Values Across Asia
-      </h1>
+        </h1>
 
       <div className="w-full max-w-4xl mx-auto px-2 sm:px-4">
         <ComposableMap

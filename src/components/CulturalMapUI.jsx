@@ -4,6 +4,29 @@ import countries from "../data/countries"; // your country data
 import CountryDetails from "./CountryDetails";
 
 const geoUrl = "/custom.geo.json";
+const hoverColorMap = {
+    China: "#f87171", // red
+    Japan: "#fb923c", // orange
+    India: "#facc15", // yellow
+    Vietnam: "#34d399", // green
+    "South Korea": "#60a5fa", // blue
+    Philippines: "#a78bfa", // purple
+    Indonesia: "#f472b6", // pink
+    Pakistan: "#4ade80", // lime
+    Thailand: "#38bdf8", // light blue
+    Singapore: "#c084fc",
+    Malaysia: "#fcd34d",
+    Mongolia: "#fda4af",
+    Nepal: "#86efac",
+    Bhutan: "#f9a8d4",
+    "Sri Lanka": "#fbbf24",
+    Laos: "#a5b4fc",
+    Afghanistan: "#f43f5e",
+    Brunei: "#22d3ee",
+    Maldives: "#2dd4bf",
+    "Timor-Leste": "#e879f9",
+  };
+const getHoverColor = (name) => hoverColorMap[name] || "#6366F1";
 
 const CulturalMapUI = () => {
   const [selectedCountry, setSelectedCountry] = useState(null);
@@ -28,18 +51,19 @@ const CulturalMapUI = () => {
   }
 
   return (
-    <main className="flex flex-col items-center px-4 pt-4 sm:pt-8">
-  <h1 className="text-2xl sm:text-3xl font-bold text-center mb-4 sm:mb-6">
-    🌏 Cultural Parenting Values Across Asia
-  </h1>
+    <main className="flex flex-col items-center px-4 pt-2 sm:pt-2">
+  <h1 className="text-3xl sm:text-4xl font-extrabold text-center text-indigo-900 mb-4 sm:mb-6 drop-shadow-sm">
+  🌏 Cultural Parenting Values Across Asia
+</h1>
 
-  <div className="w-full max-w-5xl">
+  <div className="w-full max-w-5xl mx-auto flex justify-center">
     <ComposableMap
-      projectionConfig={{ scale: 400, center: [100, 30] }}
+      projectionConfig={{ scale: 420, center: [87, 22] }}
       width={980}
       height={500}
       style={{ width: "100%", height: "auto" }}
     >
+        
       <Geographies geography="/custom.geo.json">
         {({ geographies }) =>
           geographies.map((geo) => (
@@ -49,7 +73,7 @@ const CulturalMapUI = () => {
               onClick={() => handleCountryClick(geo.properties.name)}
               style={{
                 default: { fill: "#E0E7FF", outline: "none" },
-                hover: { fill: "#6366F1", outline: "none" },
+                hover: { fill: getHoverColor(geo.properties.name), outline: "none" },
                 pressed: { fill: "#4F46E5", outline: "none" },
               }}
             />
@@ -59,9 +83,9 @@ const CulturalMapUI = () => {
     </ComposableMap>
   </div>
 
-  <p className="text-center text-sm text-gray-600 mt-4">
-    Click a country to explore its parenting values ✨
-  </p>
+  <p className="text-center text-xl font-extrabold text-indigo-900 mt-6 drop-shadow-sm">
+  🔍 Click a country to explore its parenting values ✨
+</p>
 </main>
 
   );

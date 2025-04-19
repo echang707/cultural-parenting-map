@@ -91,9 +91,11 @@ const CountryDetails = ({ country }) => {
       </h2>
 
       {country.description && (
-        <div className="bg-gray-50 border border-gray-200 p-4 rounded text-sm text-gray-700 leading-relaxed">
+        <div className="bg-gray-50 border border-gray-200 p-6 sm:p-8 rounded-lg mb-6">
+        <p className="text-base text-gray-700 leading-relaxed">
           {country.description}
-        </div>
+        </p>
+      </div>
       )}
 
       <div>
